@@ -1,0 +1,125 @@
+ .nahover {
+	position: relative;
+   opacity: 1;
+  transition: .5s ease;
+	/*-webkit-box-shadow: inset 0px -30px 65px -30px #440202;
+-moz-box-shadow: inset 0px -30px 65px -30px #440202;
+box-shadow: inset 0px -30px 65px -30px #440202; */.
+	box-shadow: inset 0px -30px 65px -30px black;
+}
+ .nahover a .opis{
+	position: absolute;
+   opacity: 0;
+	 transition: opacity .2s ease-in;
+	font-size: 14px;
+	 top:50%;
+	 transform: translate(0, -50%);
+	 font-family: "Cambriab";
+}
+ .nahover a strong{
+  opacity:1;
+	  transition: opacity .2s ease-in;
+	display:block;
+	 width:500px;
+	 height: 70px;
+	 margin-right: 0px;
+	 font-size: 17px;
+}
+.nahover:hover a  .opis {
+  opacity: 1;
+}
+ .nahover:hover{
+  opacity: 1;
+	color: white;
+    box-shadow: inset 0px -30px 65px -5px black;
+
+	filter: grayscale(100%);
+
+}
+ .nahover:hover a strong{
+  opacity: 0;
+	 display:block;
+	 width:500px;
+	 height: 70px;
+}
+/*
+.nahover:hover{
+  opacity: 1;
+	color: white;
+	box-shadow: inset 0px -30px 65px -5px gold;
+	opacity: 0.25;
+    transition: opacity 0.5s linear, filter 0.4s linear;
+    filter: blur(10px);
+}*/
+
+.belka51 .thead {
+    background: url(/Forum/uploads/foto/foto5.jpg);
+    height: 110px;
+    width: 1000px;
+	box-shadow: inset 0px -30px 65px -5px black;
+}
+
+.belka49 .thead {
+    background: url(/Forum/uploads/foto/foto7.jpg);
+    height: 110px;
+    width: 1000px;
+    box-shadow: inset 0px -30px 65px -5px black;
+}
+
+.belka1 .thead {
+    background: url(/Forum/uploads/foto/foto2.jpg);
+    height: 110px;
+    width: 1000px;
+    box-shadow: inset 0px -30px 65px -5px black;
+}
+
+.belka20 .thead {
+    background-image: url(/Forum/uploads/foto/foto1.jpg);
+    height: 110px;
+    width: 1000px;
+    box-shadow: inset 0px -30px 65px -5px black;
+}
+body {
+
+	color: #333;
+	text-align: center;
+	line-height: 1.4;
+	margin: 0;
+	font-family: Cambriab,Cambria,CAMBRIAI,CAMBRIAZ;
+	/*font-family: Tahoma, Verdana, Arial, Sans-Serif;*/
+	font-size: 13px;
+	overflow-y: scroll;
+}
+#content {
+    /* background: #0e000094 url(/Forum/uploads/foto/tlo.jpg); */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto !important;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+ikony {
+    border: none;
+    max-height: 75px;
+}
+#postAvatar
+	{
+		text-align: center;
+		background-image: none;
+		/*background-image: url({$useravatar['image']});*/
+		 background-position: center; /* Center the image */
+ 		 background-repeat: no-repeat; /* Do not repeat the image */
+  		background-size: cover;
+		opacity: 0.8; 
+		-webkit-mask-image: radial-gradient(ellipse 150% 105% at 50% 0%, #000 0%, #0000 100%);
+		mask-image: radial-gradient(ellipse 150% 105% at 50% 0%, #000 0%, #0000 100%);
+		border-style: none;
+		padding: 0px;
+		background-color: transparent;
+	}
+.post.classic .post_author div.author_statistics 
+{
+	border: none;	
+}

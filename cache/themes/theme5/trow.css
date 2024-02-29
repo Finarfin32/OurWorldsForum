@@ -1,0 +1,340 @@
+.linia_36 .when_36{
+	
+border-collapse:separate; /* Trzeba rozdzielić */
+border-spacing: 0 8px;
+	
+}
+
+.linia_36 {
+	
+border-collapse:separate; /* Trzeba rozdzielić */
+border-spacing: 0 8px;
+	
+}
+
+.opis {
+    FONT-SIZE: 0.8em;
+    font-family: 'cambria';
+    /*color: red;
+    font-weight: bold;*/
+}
+
+.tborder {
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    background: rgb(12, 8, 8);
+}
+
+.when_2{
+	background: rgb(12, 8, 8);
+} 
+
+.when_4{
+	background: rgb(12, 8, 8);
+} 
+
+.when_6{
+	background: rgb(12, 8, 8);
+} 
+
+.when_8{
+	background: rgb(12, 8, 8);
+} 
+
+.when_17{
+	background: rgb(12, 8, 8);
+} 
+
+.when_18{
+background: rgb(12, 8, 8);
+} 
+
+.when_30{
+	background: rgb(12, 8, 8);
+} 
+
+.when_35{
+	background: rgb(12, 8, 8);
+} 
+
+.when_37 {
+	background-image: url(/Forum/uploads/foto2/port.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+
+} 
+
+.when_38 {
+	background-image: url(/Forum/uploads/foto2/targ.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+
+.when_41 {
+	background-image: url(/Forum/uploads/foto2/koszary.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_42 {
+	background-image: url(/Forum/uploads/foto2/palac.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_43 {
+	background-image: url(/Forum/uploads/foto2/mur.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_74 {
+	background-image: url(/Forum/uploads/foto2/prolog.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_4 {
+	background-image: url(/Forum/uploads/foto2/informacje.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+
+.belka64 a:visited {
+    color: #0e000094 !important;
+    text-decoration: none;
+}
+
+.belka79 .thead {
+    background-image: url(/Forum/uploads/postacie/archiwum.jpg);
+    height: 110px;
+    width: 1000px;
+    box-shadow: inset 0px -30px 65px -5px black;
+}
+
+.trow_4 .trow1 {
+background: green;
+} 
+
+/* pokolei */
+
+.when_76 {
+	background-image: url(/Forum/uploads/kroniki/informacje.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_54 {
+	background-image: url(/Forum/uploads/kroniki/prolog.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+} 
+
+.when_55 {
+	background-image: url(/Forum/uploads/kroniki/panstwa.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_56 {
+	background-image: url(/Forum/uploads/kroniki/lokacje.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_57 {
+	background-image: url(/Forum/uploads/kroniki/odmiency.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_58 {
+	background-image: url(/Forum/uploads/kroniki/waznepostacie.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+
+.when_59 {
+	background-image: url(/Forum/uploads/kroniki/szkoly.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_60 {
+	background-image: url(/Forum/uploads/kroniki/waluta.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+.when_61 {
+	background-image: url(/Forum/uploads/kroniki/religia.jpg);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	
+	box-shadow: inset 0px -30px 65px -5px black;
+} 
+
+
+
+.when_69 {
+	background-image: url(/Forum/uploads/foto/tlo3.png);
+	height: 73px;
+} 
+
+.when_52 {
+	background-image: url(/Forum/uploads/foto/tlo4.png);
+	background-color: #1d1b1b;
+	height: 73px;
+	
+
+} 
+
+.when_53 {
+	background-image: url(/Forum/uploads/foto/tlo3.png);
+	height: 73px;
+} 
+
+.when_6 {
+	background-image: url(/Forum/uploads/foto/tlo4.png);
+	background-color: #1d1b1b;
+	height: 73px;
+
+} 
+
+.when_75 {
+	background-image: url(/Forum/uploads/foto/tlo3.png);
+	height: 73px;
+
+} 
+
+.when_17 {
+	background-image: url(/Forum/uploads/foto/tlo3.png);
+	height: 73px;
+
+} 
+
+.when_8 {
+	background-image: url(/Forum/uploads/foto/tlo4.png);
+	height: 73px;
+	background-color: #1d1b1b;
+
+} 
+
+.trow1 {
+    background-color: #030303;
+    background-image: url(/Forum/uploads/foto/tlo3.png);
+	/*box-shadow: 0px 0px 25px 5px black inset;
+	filter: drop-shadow(0 0 30px black);*/
+}
+
+.trow2 {
+    background-color: #1d1b1b;
+    background-image: url(/Forum/uploads/foto/tlo4.png);
+	/*filter: drop-shadow(0 0 30px black);*/
+}
+
+.when_77 {
+	background-image: url(/Forum/uploads/foto2/watekglowny.jpg);
+	 border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+
+} 
+
+.when_6 {
+	background-image: url(/Forum/uploads/foto2/watekglowny.jpg);
+	 border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+
+} 
+
+.when_75 {
+	background-image: url(/Forum/uploads/kroniki/prolog.jpg);
+	 border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+	height: 73px;
+	background-repeat: repeat-y;
+	box-shadow: inset 0px -30px 65px -5px black;
+
+} 
+
+.when_80 {
+    background-image: url(/Forum/uploads/postacie/postacie.png);
+    border: solid 1px rgba(31, 31, 31, 0.25) !Important;
+    border-radius: 12px;
+    height: 73px;
+    background-repeat: repeat-y;
+    box-shadow: inset 0px -30px 65px -5px black;
+}
+
+
+.tborder {
+	border-collapse: separate;
+    border-spacing: 0 2px;
+    background-image: url(/Forum/uploads/foto/tlo4.png);
+    background-color: #1d1b1b;
+    box-shadow: inset 0 0 4em #440202;
+}
