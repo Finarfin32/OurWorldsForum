@@ -1595,6 +1595,9 @@ class Moderation
 			update_first_post($thread['tid']);
 		}
 
+		// Attach moved posts to the first post
+		$db->update_query("posts", array('replyto' => $new_firstpost['pid']), "tid='{$tid}' AND replyto = 0 AND pid != '{$new_firstpost['pid']}'");
+
 		// Update thread count if thread has a new firstpost and is visible
 		if($thread['uid'] != $new_firstpost['uid'] && $thread['visible'] == 1 && $forum_cache[$thread['fid']]['usethreadcounts'] == 1)
 		{
@@ -2130,6 +2133,9 @@ class Moderation
 				++$forum_counters[$moveto]['deletedposts'];
 			}
 		}
+
+		// Attach moved posts to the first post
+		$db->update_query("posts", array('replyto' => $post_info['pid']), "tid='{$newtid}' AND replyto = 0 AND pid != '{$post_info['pid']}'");
 
 		if($destination_tid == 0 && $newthread['visible'] == 1)
 		{

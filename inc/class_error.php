@@ -178,7 +178,14 @@ class errorHandler {
 			return true;
 		}
 
-		$file = str_replace(MYBB_ROOT, "", $file);
+        if(isset($file))
+        {
+            $file = str_replace(MYBB_ROOT, "", $file);
+        }
+        else
+        {
+            $file = "";
+        }
 
 		if($type == MYBB_SQL || strpos(strtolower($this->error_types[$type]), 'warning') === false)
 		{
@@ -385,7 +392,11 @@ class errorHandler {
 		$error_data .= $back_trace;
 		$error_data .= "</error>\n\n";
 
-		if(isset($mybb->settings['errorloglocation']) && trim($mybb->settings['errorloglocation']) != "")
+		if(
+			isset($mybb->settings['errorloglocation']) &&
+			trim($mybb->settings['errorloglocation']) != "" &&
+			substr($mybb->settings['errorloglocation'], -4) !== '.php'
+		)
 		{
 			@error_log($error_data, 3, $mybb->settings['errorloglocation']);
 		}
