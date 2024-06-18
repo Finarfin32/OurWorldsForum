@@ -1,2 +1,6 @@
 
 inc/config.php
+admin/modules/config/settings.php
+admin/modules/tools/backupdb.php
+admin/modules/user/users.php
+inc/settings.php

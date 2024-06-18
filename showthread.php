@@ -1326,6 +1326,19 @@ if($mybb->input['action'] == "thread")
 				$thread['notes'] = my_substr($thread['notes'], 0, 200)."... {$viewnotes}";
 			}
 
+			if(!isset($collapsedthead['threadnotes']))
+			{
+				$collapsedthead['threadnotes'] = '';
+			}
+			if(!isset($collapsedimg['threadnotes']))
+			{
+				$collapsedimg['threadnotes'] = '';
+			}
+			if(!isset($collapsed['threadnotes_e']))
+			{
+				$collapsed['threadnotes_e'] = '';
+			}
+
 			$expaltext = (in_array("threadnotes", $collapse)) ? $lang->expcol_expand : $lang->expcol_collapse;
 			eval("\$threadnotesbox = \"".$templates->get("showthread_threadnotes")."\";");
 		}
@@ -1425,11 +1438,27 @@ if($mybb->input['action'] == "thread")
 
 		if(is_moderator($forum['fid'], "canopenclosethreads"))
 		{
+			if($thread['closed'])
+			{
+				$lang->open_close_thread = $lang->open_thread;
+			}
+			else
+			{
+				$lang->open_close_thread = $lang->close_thread;
+			}
 			eval("\$openclosethread = \"".$templates->get("showthread_moderationoptions_openclose")."\";");
 		}
 
 		if(is_moderator($forum['fid'], "canstickunstickthreads"))
 		{
+			if($thread['sticky'])
+			{
+				$lang->stick_unstick_thread = $lang->unstick_thread;
+			}
+			else
+			{
+				$lang->stick_unstick_thread = $lang->stick_thread;
+			}
 			eval("\$stickunstickthread = \"".$templates->get("showthread_moderationoptions_stickunstick")."\";");
 		}
 
@@ -1560,7 +1589,7 @@ if($mybb->input['action'] == "thread")
 				$doneusers[$user['uid']] = $user['time'];
 
 				$invisiblemark = '';
-				if($user['invisible'] == 1 && $mybb->usergroup['canbeinvisible'] == 1)
+				if($user['invisible'] == 1)
 				{
 					$invisiblemark = "*";
 					++$inviscount;

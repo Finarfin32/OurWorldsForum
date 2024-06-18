@@ -3,7 +3,7 @@
  * Rin Editor (Powerd by CKEditor)
  * https://github.com/martec
  *
- * Copyright (C) 2015-2017, Martec
+ * Copyright (C) 2015-2021, Martec
  *
  * Rin Editor is licensed under the GPL Version 3, 29 June 2007 license:
  *	http://www.gnu.org/copyleft/gpl.html
@@ -20,7 +20,7 @@ if(!defined("IN_MYBB"))
 	die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
 }
 
-define('RE_PLUGIN_VER', '0.9.7');
+define('RE_PLUGIN_VER', '1.2.4');
 
 function rineditor_info()
 {
@@ -69,16 +69,17 @@ function rineditor_install()
 		'isdefault'	=> '0'
 	));
 
+	$dorder_set = 0;
 	$new_setting[] = array(
 		'name'		=> 'rineditor_enb_quick',
 		'title'		=> $lang->rineditor_enbquick_title,
 		'description'	=> $lang->rineditor_enbquick_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '1',
-		'disporder'	=> 1,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
-	
+
 	$new_setting[] = array(
 		'name'		=> 'rineditor_language',
 		'title'		=> $lang->rineditor_language_title,
@@ -86,17 +87,17 @@ function rineditor_install()
 		'optionscode'	=> 'select
 '.$lang->rineditor_language_val.'',
 		'value'		=> '',
-		'disporder'	=> 2,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
-	
+
 	$new_setting[] = array(
 		'name'		=> 'rineditor_mobm_source',
 		'title'		=> $lang->rineditor_mobms_title,
 		'description'	=> $lang->rineditor_mobms_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '1',
-		'disporder'	=> 3,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -106,7 +107,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_quickquote_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '1',
-		'disporder'	=> 4,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -116,17 +117,17 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_smile_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '1',
-		'disporder'	=> 5,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
-	
+
 	$new_setting[] = array(
 		'name'		=> 'rineditor_smiley_sc',
 		'title'		=> $lang->rineditor_scsmiley_title,
 		'description'	=> $lang->rineditor_scsmiley_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '0',
-		'disporder'	=> 6,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -136,37 +137,48 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_autosave_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '0',
-		'disporder'	=> 7,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
-	
+
 	$new_setting[] = array(
 		'name'		=> 'rineditor_autosave_message',
 		'title'		=> $lang->rineditor_autosavemsg_title,
 		'description'	=> $lang->rineditor_autosavemsg_desc,
-		'optionscode'	=> 'yesno',
-		'value'		=> '1',
-		'disporder'	=> 8,
+		'optionscode'	=> 'select
+'.$lang->rineditor_autosavemsg_val.'',
+		'value'		=> '',
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
-	
+
 	$new_setting[] = array(
 		'name'		=> 'rineditor_sel_text',
 		'title'		=> $lang->rineditor_seltext_title,
 		'description'	=> $lang->rineditor_seltext_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '1',
-		'disporder'	=> 9,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
-	
+
 	$new_setting[] = array(
 		'name'		=> 'rineditor_partial_mode',
 		'title'		=> $lang->rineditor_partial_title,
 		'description'	=> $lang->rineditor_partial_desc,
 		'optionscode'	=> 'yesno',
 		'value'		=> '0',
-		'disporder'	=> 10,
+		'disporder'	=> ++$dorder_set,
+		'gid'		=> $groupid
+	);
+
+	$new_setting[] = array(
+		'name'		=> 'rineditor_img_resize',
+		'title'		=> $lang->rineditor_imgs_title,
+		'description'	=> $lang->rineditor_imgs_desc,
+		'optionscode'	=> 'yesno',
+		'value'		=> '0',
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -176,7 +188,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_heightf_desc,
 		'optionscode'	=> 'numeric',
 		'value'		=> '250',
-		'disporder'	=> 11,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -186,7 +198,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_heighto_desc,
 		'optionscode'	=> 'numeric',
 		'value'		=> '200',
-		'disporder'	=> 12,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -196,7 +208,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_buttonsf_desc,
 		'optionscode'	=> 'textarea',
 		'value'		=> 'Subscript,Superscript',
-		'disporder'	=> 13,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -206,7 +218,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_buttonsf_desc,
 		'optionscode'	=> 'textarea',
 		'value'		=> 'Subscript,Superscript',
-		'disporder'	=> 14,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -216,7 +228,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_rules_desc,
 		'optionscode'	=> 'textarea',
 		'value'		=> '',
-		'disporder'	=> 15,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -226,7 +238,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_rules_desc,
 		'optionscode'	=> 'textarea',
 		'value'		=> '',
-		'disporder'	=> 16,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -236,7 +248,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_rules_desc,
 		'optionscode'	=> 'textarea',
 		'value'		=> '',
-		'disporder'	=> 17,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -246,7 +258,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_rules_desc,
 		'optionscode'	=> 'textarea',
 		'value'		=> '',
-		'disporder'	=> 18,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -256,7 +268,7 @@ function rineditor_install()
 		'description'	=> $lang->rineditor_imgur_desc,
 		'optionscode'	=> 'text',
 		'value'		=> '',
-		'disporder'	=> 19,
+		'disporder'	=> ++$dorder_set,
 		'gid'		=> $groupid
 	);
 
@@ -316,13 +328,14 @@ rinvbquote = {\$rin_vbquote},
 rinskin = '{\$rin_style}',
 rinimgur = '{\$rin_imgur}',
 seltext = '{\$mybb->settings['rineditor_sel_text']}',
-partialmode = '{\$mybb->settings['rineditor_partial_mode']}';
+partialmode = '{\$mybb->settings['rineditor_partial_mode']}',
+rin_img_resize = '{\$mybb->settings['rineditor_img_resize']}',
+content_url = '{\$content_skin}';
 </script>
-<script type=\"text/javascript\" src=\"{\$mybb->asset_url}/jscripts/rin/editor/rineditor.js?ver=".RE_PLUGIN_VER."\"></script>
-<script type=\"text/javascript\" src=\"{\$mybb->asset_url}/jscripts/rin/editor/ckeditor.js?ver=".RE_PLUGIN_VER."\"></script>
-<script type=\"text/javascript\" src=\"{\$mybb->asset_url}/jscripts/rin/editor/adapters/jquery.js?ver=".RE_PLUGIN_VER."\"></script>
+{\$rin_js_files}
 {\$quickquote}
 {\$quickquotesty}
+{\$black_text}
 <script type=\"text/javascript\">
 $('#message, #signature').ckeditor();
 
@@ -521,12 +534,12 @@ function rineditor_deactivate()
 		'#' . preg_quote('{$post[\'quick_quote\']}{$post[\'iplogged\']}') . '#i',
 		'{$post[\'iplogged\']}'
 	);
-	
+
 	find_replace_templatesets(
 		'postbit',
 		'#' . preg_quote('{$post[\'quick_quote\']}{$post[\'iplogged\']}') . '#i',
 		'{$post[\'iplogged\']}'
-	);	
+	);
 
 	find_replace_templatesets(
 		'post_attachments_attachment_postinsert',
@@ -597,12 +610,14 @@ function rineditor_inserter_quick($smilies = true)
 		"editor_youtube" => "Youtube",
 		"editor_facebook" => "Facebook",
 		"editor_liveleak" => "LiveLeak",
-		"editor_twitch" => "Twitch",		
+		"editor_twitch" => "Twitch",
 		"editor_insertvideo" => "Insert a video",
 		"editor_more" => "More",
 		"rineditor_restore" => "Restore",
 		"rineditor_uploading" => "Uploading",
 		"rineditor_fail" => "Fail",
+		"wrote" => "Wrote",
+		"quote" => "Quote"
 	);
 	$editor_language = "RinEditor = {\n";
 
@@ -690,7 +705,11 @@ function rineditor_inserter_quick($smilies = true)
 		}
 	}
 
-	$quickquote = $quickquotesty = $sourcemode = $rin_height = $rin_rmvbut = $rin_extbut = $rin_extbutd = $rin_imgur = $rin_autosave = $rinlang = $rinscsmiley = $rin_vbquote = "";
+	$rin_js_files = $quickquote = $quickquotesty = $sourcemode = $rin_height = $rin_rmvbut = $rin_extbut = $rin_extbutd = $rin_imgur = $rin_autosave = $rinlang = $rinscsmiley = $rin_vbquote = $black_text = $content_skin = "";
+
+	$rin_js_files = "<script type=\"text/javascript\" src=\"".$mybb->asset_url."/jscripts/rin/editor/rineditor.js?ver=".RE_PLUGIN_VER."\"></script>
+<script type=\"text/javascript\" src=\"".$mybb->asset_url."/jscripts/rin/editor/ckeditor.js?ver=".RE_PLUGIN_VER."\"></script>
+<script type=\"text/javascript\" src=\"".$mybb->asset_url."/jscripts/rin/editor/adapters/jquery.js?ver=".RE_PLUGIN_VER."\"></script>";
 
 	if(strpos($templatelist,'showthread_quickreply') || strpos($templatelist,'private_quickreply')) {
 		$rin_height = $mybb->settings['rineditor_height_other'];
@@ -731,8 +750,26 @@ function rineditor_inserter_quick($smilies = true)
 		$rin_vbquote = 0;
 	}
 
+	$content_skin = "".$mybb->asset_url."/jscripts/rin/editor/contents.css?ver=".RE_PLUGIN_VER."";
 	if(substr($theme['editortheme'], 0, 4) === "rin-") {
 		$rin_style = substr($theme['editortheme'], 0, -4);
+	}
+	elseif (substr($theme['editortheme'], 0, 6) === "b_rin-") {
+		$rin_style = substr($theme['editortheme'], 2, -4);
+		$black_text = "<style type=\"text/css\">
+textarea.cke_source {
+	background-color: #222222 !important;
+	height: 100% !important;
+	width: 100% !important;
+	color: #eeeeee !important;
+	margin: 0px !important;
+	border-radius: 0px !important;
+}
+.cke_wysiwyg_frame {
+	background-color: #222222 !important;
+}
+</style>";
+		$content_skin = "".$mybb->asset_url."/jscripts/rin/editor/contents_black.css?ver=".RE_PLUGIN_VER."";
 	}
 	else {
 		$rin_style = 'rin-moonocolor';
@@ -748,8 +785,6 @@ function rineditor_inserter_quick($smilies = true)
 
 global $settings;
 
-$plugins->add_hook('pre_output_page', 'rineditor_replace', 100);
-
 $enbq = '';
 
 if($settings['rineditor_enb_quick']) {
@@ -761,19 +796,29 @@ foreach ($plugin_local as &$local) {
 	$plugins->add_hook(''.$local.'', 'rineditor');
 }
 
-function rineditor_replace($page) {
-
-	$page = str_replace(build_mycode_inserter('signature'), '', $page);
-	$page = str_replace(build_mycode_inserter('message'), '', $page);
-
-	return $page;
-}
-
 function rineditor () {
 
-	global $rinbutquick;
+	global $rinbutquick, $mybb, $forum, $plugins, $calendar;
 
-	$rinbutquick = rineditor_inserter_quick();
+	$allow_mycode = true;
+
+	if($plugins->current_hook == 'private_start')
+	{
+		$allow_mycode = $mybb->settings['pmsallowmycode'];
+	}
+	elseif($plugins->current_hook == 'calendar_start' && isset($calendar['allowmycode']))
+	{
+		$allow_mycode = $calendar['allowmycode'];
+	}
+	elseif(isset($forum['allowmycode']))
+	{
+		$allow_mycode = $forum['allowmycode'];
+	}
+
+	// If MyCode is on for this forum and the MyCode editor is enabled in the Admin CP, draw the rin editor.
+	if($mybb->settings['bbcodeinserter'] != 0 && $allow_mycode && (!$mybb->user['uid'] || $mybb->user['showcodebuttons'] != 0)) {
+		$rinbutquick = rineditor_inserter_quick();
+	}
 }
 
 if($settings['rineditor_quickquote'] && $settings['rineditor_enb_quick']) {
@@ -782,11 +827,13 @@ if($settings['rineditor_quickquote'] && $settings['rineditor_enb_quick']) {
 
 function re_quickquote_postbit(&$post)
 {
-	global $templates, $lang;
+	global $templates, $lang, $mybb, $forum;
 
 	$post['quick_quote'] = '';
-	eval("\$post['quick_quote'] = \"" . $templates->get("postbit_quickquote") . "\";");
-
+	// If MyCode is on for this forum and the MyCode editor is enabled in the Admin CP, enable quick quote.
+	if($mybb->settings['bbcodeinserter'] != 0 && $forum['allowmycode'] != 0 && (!$mybb->user['uid'] || $mybb->user['showcodebuttons'] != 0)) {
+		eval("\$post['quick_quote'] = \"" . $templates->get("postbit_quickquote") . "\";");
+	}
 }
 
 if($settings['rineditor_smile']) {
@@ -796,8 +843,11 @@ if($settings['rineditor_smile']) {
 
 function rineditor_quick () {
 
-	global $smilieinserter;
+	global $smilieinserter, $mybb, $forum;
 
-	$smilieinserter = build_clickable_smilies();
+	// If MyCode is on for this forum and the MyCode editor is enabled in the Admin CP, draw the smile inserter.
+	if($mybb->settings['bbcodeinserter'] != 0 && $forum['allowmycode'] != 0 && (!$mybb->user['uid'] || $mybb->user['showcodebuttons'] != 0)) {
+		$smilieinserter = build_clickable_smilies();
+	}
 }
 ?>

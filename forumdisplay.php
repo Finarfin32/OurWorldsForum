@@ -307,7 +307,7 @@ if($mybb->settings['browsingthisforum'] != 0)
 		{
 			$doneusers[$user['uid']] = $user['time'];
 			++$membercount;
-			if($user['invisible'] == 1 && $mybb->usergroup['canbeinvisible'] == 1)
+			if($user['invisible'] == 1)
 			{
 				$invisiblemark = "*";
 				++$inviscount;
@@ -1513,8 +1513,6 @@ if($mybb->user['uid'])
 
 	eval("\$addremovesubscription = \"".$templates->get("forumdisplay_threadlist_subscription")."\";");
 }
-
-$inline_edit_js = $clearstoredpass = '';
 
 // Is this a real forum with threads?
 if($foruminfo['type'] != "c")

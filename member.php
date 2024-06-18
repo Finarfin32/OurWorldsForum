@@ -391,13 +391,13 @@ if($mybb->input['action'] == "do_register" && $mybb->request_method == "post")
 			$captcha->invalidate_captcha();
 		}
 
-		if($mybb->settings['regtype'] != "randompass" && !isset($mybb->cookies['coppauser']))
+		if($mybb->settings['regtype'] != "randompass" && empty($mybb->cookies['coppauser']))
 		{
 			// Log them in
 			my_setcookie("mybbuser", $user_info['uid']."_".$user_info['loginkey'], null, true, "lax");
 		}
 
-		if(isset($mybb->cookies['coppauser']))
+		if(!empty($mybb->cookies['coppauser']))
 		{
 			$lang->redirect_registered_coppa_activate = $lang->sprintf($lang->redirect_registered_coppa_activate, $mybb->settings['bbname'], htmlspecialchars_uni($user_info['username']));
 			my_unsetcookie("coppauser");
@@ -718,6 +718,8 @@ if($mybb->input['action'] == "register")
 		$birthday_year = '';
 	}
 
+	$under_thirteen = false;
+	
 	// Is COPPA checking enabled?
 	if($mybb->settings['coppa'] != "disabled" && !isset($mybb->input['step']))
 	{
@@ -743,6 +745,10 @@ if($mybb->input['action'] == "register")
 				my_setcookie("coppauser", 1, -0);
 				$under_thirteen = true;
 			}
+			else
+			{
+				my_setcookie("coppauser", 0, -0);
+			}
 			$mybb->request_method = "";
 		}
 		// Show DOB select form
@@ -763,7 +769,7 @@ if($mybb->input['action'] == "register")
 	{
 		$coppa_agreement = '';
 		// Is this user a COPPA user? We need to show the COPPA agreement too
-		if($mybb->settings['coppa'] != "disabled" && ($mybb->cookies['coppauser'] == 1 || $under_thirteen))
+		if($mybb->settings['coppa'] != "disabled" && (!empty($mybb->cookies['coppauser']) || $under_thirteen))
 		{
 			if($mybb->settings['coppa'] == "deny")
 			{
@@ -1660,7 +1666,7 @@ if($mybb->input['action'] == "resetpassword")
 		require_once MYBB_ROOT.'inc/datahandlers/user.php';
 		$userhandler = new UserDataHandler('update');
 
-		while(!$userhandler->verify_password())
+		do
 		{
 			$password = random_str($password_length, $mybb->settings['requirecomplexpasswords']);
 
@@ -1673,13 +1679,13 @@ if($mybb->input['action'] == "resetpassword")
 
 			$userhandler->set_validated(true);
 			$userhandler->errors = array();
-		}
+		} while(!$userhandler->verify_password());
 
 		$userhandler->update_user();
 
 		$logindetails = array(
 			'salt'		=> $userhandler->data['salt'],
-			'password'	=> $userhandler->data['saltedpw'],
+			'password'	=> $userhandler->data['password'],
 			'loginkey'	=> $userhandler->data['loginkey'],
 		);
 
